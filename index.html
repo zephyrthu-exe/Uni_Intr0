@@ -67,15 +67,28 @@
 
         #Header
         {
-            font-size: 4em;
+            font-size: 2.5em;
+        }
+
+        @media (min-width: 768px) {
+            #Header {
+                font-size: 4em;
+            }
         }
 
         #Start
         {
-            font-size: 1.5em;
+            font-size: 1em;
             transition: transform 0.8s;
             cursor:pointer;
         }
+
+        @media (min-width: 768px) {
+            #Start {
+                font-size: 1.5em;
+            }
+        }
+
         #Start:hover
         {
             transform: scale(1.12);
@@ -85,6 +98,13 @@
             color: var(--text-main) !important;
             opacity: 0.75;
             transition: opacity 0.4s, color 0.4s;
+            font-size: 0.85em;
+        }
+
+        @media (min-width: 768px) {
+            .text-muted {
+                font-size: 1em;
+            }
         }
         #page-wrapper.animate
         {
