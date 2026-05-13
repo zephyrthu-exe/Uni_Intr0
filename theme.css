@@ -1,0 +1,27 @@
+  :root {
+      --bg-body: #F8F9FA;
+      --bg-box: #F8F9FA;
+      --border-color: #121212;
+      --text-main: #121212;
+      --text-cmt: #121212;
+      --text-code: #495057;
+      --text-heading: #121212;
+      --icon-color: #121212;
+      --nav-bg: #121212;
+      --nav-text: #F8F9FA;
+      --nav-border: transparent;
+  }
+
+  [data-theme="terminal"] {
+      --bg-body: #121212;
+      --bg-box: #121212;
+      --border-color: #00ff41;
+      --text-main: #00ff41;
+      --text-cmt: #1da73f;
+      --text-code: #30e65db8;
+      --text-heading: #00ff41;
+      --icon-color: #00ff41;
+      --nav-bg: #121212;
+      --nav-text: #00ff41;
+      --nav-border: #00ff41;
+    }

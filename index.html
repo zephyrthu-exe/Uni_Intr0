@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function()
+    {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="theme.css">
+    <style>
+
+        body
+        {
+            background-color: var(--bg-body) !important;
+            font-family: 'Courier New', monospace;
+            color: var(--text-main);
+            transition: background-color 0.4s, color 0.4s;
+        }
+
+        .navbar
+        {
+            background-color: var(--nav-bg) !important;
+            border-bottom: 1px solid var(--border-color) !important;
+            box-shadow: none !important;
+            transition: all 0.4s;
+        }
+
+        .container-fluid
+        {
+            max-width: 1200px;
+            padding: 1 rem 5%;
+            width: 100%;
+            justify-content: space-between;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        #Home
+        {
+            color: var(--nav-text) !important;
+            font-size: 2em;
+            font-family: 'Courier New', monospace;
+            transition: color 0.4s;
+        }
+
+        #terminal
+        {
+            border: none !important;
+            background-color: transparent;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        #terminal i
+        {
+            color: var(--nav-text) !important;
+            transition: color 0.4s;
+        }
+
+        #Header
+        {
+            font-size: 4em;
+        }
+
+        #Start
+        {
+            font-size: 1.5em;
+            transition: transform 0.8s;
+            cursor:pointer;
+        }
+        #Start:hover
+        {
+            transform: scale(1.12);
+        }
+        .text-muted
+        {
+            color: var(--text-main) !important;
+            opacity: 0.75;
+            transition: opacity 0.4s, color 0.4s;
+        }
+        #page-wrapper.animate
+        {
+            animation: fadeOut 0.8s forwards;
+        }
+        #page-wrapper
+        {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+         #terminal:hover
+        {
+            transform: scale(1.4);
+        }
+
+        @keyframes fadeOut {
+            to {opacity: 0;}
+        }
+
+        @keyframes fadeIn
+        {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+    </style>
+</head>
+<body>
+    <div id="page-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark w-100 h-100 py-2 sticky-top">
+            <div class="container-fluid">
+            <a id = "Home" class="navbar-brand ms-5 mb-0 h1" href="index.html">Uni_Intr0</a>
+            <button id="terminal" class="btn btn-black btn-sm ms-auto me-3 align-items-center" data-bs-toggle="tooltip" data-bs-placement="left" title="Terminal Theme">
+                <i class="fa-sharp fa-solid fa-terminal" style="color: rgb(255, 255, 255);"></i>
+            </button>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center min-vh-100">
+                <div class="p-5 text-center mt-4">
+                    <h1 id="Header">Uni_Intr0</h1>
+                    <small class="text-muted">Beta</small>
+                    <br>
+                    <button id="Start" type="button" class="btn btn-outline-success" style="margin-top: 4rem;">Next Page</button>
+                </div>
+            </div>
+        </div>
+        <footer class="mt-4 py-4 text-center">
+            Made with Love
+            <br>
+            Zephyr
+            <br>
+            &copy;Copyright
+        </footer>
+    </div>
+
+    <script>
+        const btn = document.getElementById('Start');
+        const container = document.getElementById('page-wrapper');
+
+        window.addEventListener('pageshow', () => {
+            container.classList.remove('animate');
+        });
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            container.classList.remove('animate');
+
+            void container.offsetWidth;
+
+            container.classList.add('animate');
+        });
+
+        container.addEventListener('animationend', (e) => {
+            if (e.animationName === 'fadeOut')
+        {
+            window.location.href = 'Menu.html';
+        }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>
