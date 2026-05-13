@@ -34,12 +34,34 @@
         .container-fluid
         {
             max-width: 1200px;
-            padding: 1 rem 5%;
+            padding: 0.5rem 3%;
             width: 100%;
             justify-content: space-between;
             margin: 0 auto;
             display: flex;
             align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .container-fluid {
+                padding: 1rem 5%;
+            }
+        }
+
+        .container.mt-5 {
+            padding-top: 80px !important;
+        }
+
+        @media (min-width: 768px) {
+            .container.mt-5 {
+                padding-top: 120px !important;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container.mt-5 {
+                padding-top: 200px !important;
+            }
         }
         .container1
         {
@@ -59,11 +81,17 @@
         {
             font-weight: bold;
             color: var(--text-heading);
-            font-size: 3em;
+            font-size: 1.75em;
             margin: auto;
             text-align: center;
             align-items: center;
             transition: color 0.4s;
+        }
+
+        @media (min-width: 768px) {
+            .container h2 {
+                font-size: 3em;
+            }
         }
         #Home
         {
@@ -131,10 +159,38 @@
         {
             transition: transform 0.5s;
             cursor: pointer;
+            margin-bottom: 0.5rem;
         }
+
+        @media (min-width: 768px) {
+            .box {
+                margin-bottom: 1rem;
+            }
+        }
+
         .box:hover
         {
             transform: scale(1.1);
+        }
+
+        .box div {
+            height: 180px;
+        }
+
+        @media (min-width: 768px) {
+            .box div {
+                height: 250px;
+            }
+        }
+
+        .box i {
+            font-size: 2em;
+        }
+
+        @media (min-width: 768px) {
+            .box i {
+                font-size: 3em;
+            }
         }
         .box1
         {
@@ -192,12 +248,25 @@
         {
             color: var(--text-heading) !important;
             border-radius: 50rem;
-            padding: 0.5rem 1.75rem;
+            padding: 0.35rem 0.75rem;
             font-weight: 500;
-            font-size: 2rem;
+            font-size: 0.9rem;
             cursor: pointer;
             border: none;
             background: transparent;
+        }
+
+        @media (min-width: 768px) {
+            .cont3 .tabpill .tab-container .nav-pills .nav-link {
+                padding: 0.5rem 1.75rem;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .cont3 .tabpill .tab-container .nav-pills .nav-link {
+                font-size: 2rem;
+            }
         }
         .cont3 .tabpill .nav-pills .nav-link:hover
         {
@@ -212,20 +281,35 @@
         } */
         .cont3 .tabpill .tab-content-box
         {
-            margin-top: 2rem;
+            margin-top: 1rem;
             width: 100%;
             max-width: 100%;
             background: transparent !important;
             border-radius: 1rem;
-            padding: 2rem;
+            padding: 1rem;
             /* box-shadow: 0 4px 12px rgba(0,0,0,0.04); */
             min-height: 200px;
+        }
+
+        @media (min-width: 768px) {
+            .cont3 .tabpill .tab-content-box {
+                margin-top: 2rem;
+                padding: 2rem;
+            }
         }
         .about
         {
             color: var(--text-cmt) !important;
             font-family: 'Courier New', monospace;
-            line-height: 2rem;
+            line-height: 1.6rem;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 768px) {
+            .about {
+                line-height: 2rem;
+                font-size: 1rem;
+            }
         }
         .cont3 .tabpill .tab-pane
         {
@@ -271,11 +355,11 @@
                 </nav>
             </div>
             <div id="Slide1" class="container1">
-                <div class="container mt-5" style="padding-top:200px">
+                <div class="container mt-5" style="padding-top:100px">
                     <h2 class="mb-5">University by Category</h2>
                     <div class="row">
-                        <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                        <div class=" box col-12 col-md-6 col-lg-4">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="Eng()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div id="Engineering" class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-users-gear" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -287,7 +371,7 @@
                             </div>
                         </div>
                         <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="IT()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-code" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -299,7 +383,7 @@
                             </div>
                         </div>
                         <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="Poly()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-gears" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -311,7 +395,7 @@
                             </div>
                         </div>
                         <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="Mari()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-ship" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -323,7 +407,7 @@
                             </div>
                         </div>
                         <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="Avi()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-plane-up" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -335,7 +419,7 @@
                             </div>
                         </div>
                         <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="Art()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-graduation-cap" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -347,7 +431,7 @@
                             </div>
                         </div>
                         <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="Med()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-staff-snake" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -359,7 +443,7 @@
                             </div>
                         </div>
                         <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="MedT()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-laptop-medical" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -371,7 +455,7 @@
                             </div>
                         </div>
                         <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="Phar()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-pills fa-sm" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -383,7 +467,7 @@
                             </div>
                         </div>
                         <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="Nur()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-user-nurse" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -395,7 +479,7 @@
                             </div>
                         </div>
                         <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="Yezin()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-building-columns" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -407,7 +491,7 @@
                             </div>
                         </div>
                         <div class=" box col-12 col-md-6 col-lg-4 mb-4">
-                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1" style="height:250px">
+                            <div class="bg-white border border-black d-flex flex-column justify-content-center align-items-center rounded-1">
                                 <a href="#" onclick="Eco()" class="d-flex flex-column align-items-center h-100 w-100 text-decoration-none text-dark">
                                     <div class="flex-grow-1 d-flex align-items-center justify-content-center w-100">
                                         <i class="fa-sharp fa-solid fa-chart-line" style="color: rgb(0, 0, 0); font-size: 3em;"></i>
@@ -672,8 +756,8 @@
                             Electrical Power Engineering (လျှပ်စစ်စွမ်းအားအင်ဂျင်နီယာ): လျှပ်စစ်ထုတ်လုပ်မှု၊ ဖြန့်ဖြူးမှုနဲ့ ထိန်းချုပ်မှုစနစ်တွေကို လေ့လာရမယ့် မေဂျာပါ။ နိုင်ငံရဲ့ လျှပ်စစ်ကဏ္ဍကို ဦးဆောင်ချင်သူတွေ ရွေးချယ်သင့်ပါတယ်။ ⚡💡
                             Electronic Engineering (အီလက်ထရောနစ်အင်ဂျင်နီယာ): ဆားကစ် (Circuits) တွေ၊ ဆက်သွယ်ရေးနည်းပညာတွေ (Communications) နဲ့ Embedded Systems တွေကို ကလိရတာ သဘောကျရင် ဒါလေးက အိုကေပဲနော်။ 📻🔌
                             Computer Engineering and Information Technology - CEIT (ကွန်ပျူတာအင်ဂျင်နီယာနှင့် သတင်းအချက်အလက်နည်းပညာ): Code တွေရေးမယ်၊ Software တွေ ဖန်တီးမယ်၊ Hardware ပိုင်းတွေပါ တွဲလုပ်မယ်ဆိုရင် IT ခေတ်ကြီးမှာ အလုပ်အကိုင် အခွင့်အလမ်း အလွန်များတဲ့ မေဂျာပါ။ 💻🌐
-                            Mechatronic Engineering (စက်မှုအီလက်ထရောနစ်အင်ဂျင်နီယာ): စက်မှု (Mechanical)၊ လျှပ်စစ် (Electrical) နဲ့ ကွန်ပျူတာ (Computer) ပညာရပ်သုံးခုကို ပေါင်းစပ်ထားတာပါ။ Robotics ပိုင်းနဲ့ အလိုအလျောက် ထိန်းချုပ်မှုစနစ် (Automation) တွေ ဝါသနာပါရင် ဒါကိုသာရွေး။ 🤖🦾
-                            Chemical Engineering (ဓာတုအင်ဂျင်နီယာ): ဓာတုဗေဒဖြစ်စဉ်တွေကနေတစ်ဆင့် လူသုံးကုန်ပစ္စည်းတွေ၊ ဆေးဝါးတွေ၊ စွမ်းအင်တွေ ထုတ်လုပ်တဲ့ လုပ်ငန်းစဉ်တွေကို စိတ်ဝင်စားရင် တက်သင့်တဲ့ မေဂျာပါ။ 🧪🏭
+                            Mechatronic Engineering (စက်မှုအီလက်ထရောနစ်အင်ဂျင်နီယာ): စက်မှု (Mechanical)၊ လျှပ်စစ် (Electrical) နဲ့ ကွန��ပျူတာ (Computer) ပညာရပ်သုံးခုကို ပေါင်းစပ်ထားတာပါ။ Robotics ပိုင်းနဲ့ အလိုအလျောက် ထိန်းချုပ်မှုစနစ် (Automation) တွေ ဝါသနာပါရင် ဒါကိုသာရွေး။ 🤖🦾
+                            Chemical Engineering (ဓာတ���အင်ဂျင်နီယာ): ဓာတုဗေဒဖြစ်စဉ်တွေကနေတစ်ဆင့် လူသုံးကုန်ပစ္စည်းတွေ၊ ဆေးဝါးတွေ၊ စွမ်းအင်တွေ ထုတ်လုပ်တဲ့ လုပ်ငန်းစဉ်တွေကို စိတ်ဝင်စားရင် တက်သင့်တဲ့ မေဂျာပါ။ 🧪🏭
                             Textile Engineering (အထည်အလိပ်အင်ဂျင်နီယာ): ဖက်ရှင်နဲ့ အထည်အလိပ်ထုတ်လုပ်မှု နည်းပညာတွေ၊ ချည်မျှင်နဲ့ပတ်သက်တဲ့ ဖြစ်စဉ်တွေအကြောင်း အသေးစိတ် လေ့လာချင်သူတွေအတွက်ပါ။ 🧵👕
                             Mining Engineering (သတ္တုတွင်းအင်ဂျင်နီယာ): မြေအောက်သယံဇာတ တူးဖော်ရေး၊ တွင်းထွက်ပစ္စည်း စီမံခန့်ခွဲမှုနဲ့ ဘေးကင်းလုံခြုံရေးတွေကို ဦးဆောင်လုပ်ကိုင်ချင်သူတွေအတွက် အထူးသင့်လျော်ပါတယ်။ ⛏️💎
                             Petroleum Engineering (ရေနံအင်ဂျင်နီယာ): ရေနံနဲ့ သဘာဝဓာတ်ငွေ့ ရှာဖွေရေး၊ တူးဖော်ရေးနဲ့ ထုတ်လုပ်ရေးပိုင်းကို စိတ်ဝင်စားရင် ရွေးချယ်နိုင်ပါတယ်။ 🛢️🔥
