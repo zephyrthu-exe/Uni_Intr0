@@ -8,9 +8,8 @@
     {
         if (!toggleBtn) return;
         toggleBtn.innerHTML = theme === 'terminal'
-        ? '<i class="fa-sharp fa-solid fa-circle-half-stroke" style="align-items: center; font-size: 1.4em;" data-bs-toggle="tooltip" data-bs-placement="left" title="Light Theme"></i>'
-        : '<i class="fa-sharp fa-solid fa-terminal" style="font-size: 1.2em;"></i>';
-
+        ? '<i class="fa-solid fa-sun" style="align-items: center; font-size: 1.4em;" data-bs-toggle="tooltip" data-bs-placement="left" title="Light Theme"></i>'
+        : '<i class="fa-solid fa-code" style="font-size: 1.2em;"></i>';
         toggleBtn.setAttribute('title', theme === 'terminal' ? 'Light Theme' : 'Terminal Theme');
     }
 
