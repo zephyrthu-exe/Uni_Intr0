@@ -173,6 +173,58 @@ button {
     font-weight: 700;
 }
 
+.detail-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.detail-action-button {
+    min-height: 2.55rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid currentColor;
+    border-radius: 0.4rem;
+    padding: 0.55rem 0.8rem;
+    background-color: transparent;
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease, outline-color 0.18s ease;
+}
+
+.detail-action-button:hover,
+.detail-action-button:focus-visible {
+    transform: translateY(-2px);
+    color: #ffffff !important;
+    outline-offset: 2px;
+}
+
+.report-button {
+    color: #b42318 !important;
+}
+
+.report-button:hover,
+.report-button:focus-visible {
+    background-color: #b42318;
+    outline: 1px solid #b42318;
+}
+
+.community-button {
+    color: #0b6fa4 !important;
+}
+
+.community-button:hover,
+.community-button:focus-visible {
+    background-color: #0b6fa4;
+    outline: 1px solid #0b6fa4;
+}
+
 .university-list {
     display: grid;
     gap: 0.85rem;
@@ -217,6 +269,7 @@ button {
 }
 
 .detail-toolbar {
+    gap: 1rem;
     justify-content: space-between;
 }
 
@@ -245,7 +298,61 @@ button {
 
 
 .university-image-frame {
+    position: relative;
     border-style: solid;
+}
+
+.image-nav {
+    position: absolute;
+    top: 50%;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: inline-grid;
+    place-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background-color: var(--bg-body);
+    color: var(--text-heading);
+    transform: translateY(-50%);
+    transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+
+.image-nav:hover,
+.image-nav:focus-visible {
+    background-color: var(--accent-color);
+    color: var(--bg-body);
+    outline: 1px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.image-nav-prev {
+    left: 0.85rem;
+}
+
+.image-nav-next {
+    right: 0.85rem;
+}
+
+.image-indicators {
+    position: absolute;
+    left: 50%;
+    bottom: 0.85rem;
+    display: flex;
+    gap: 0.45rem;
+    transform: translateX(-50%);
+}
+
+.image-indicator {
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0;
+    background-color: var(--bg-body);
+}
+
+.image-indicator.is-active {
+    background-color: var(--accent-color);
 }
 
 .university-image-placeholder {
@@ -332,6 +439,14 @@ button {
     font-weight: 800;
 }
 
+.detail-panel h3 {
+    margin: 0 0 0.75rem;
+    color: var(--text-heading);
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
+    font-weight: 800;
+    line-height: 1.35;
+}
+
 .detail-panel p {
     margin: 0 0 1rem;
 }
@@ -339,6 +454,141 @@ button {
 .detail-panel ul {
     margin: 0;
     padding-left: 1.25rem;
+}
+
+.cutoff-content {
+    display: grid;
+    gap: 1.35rem;
+}
+
+.cutoff-intro,
+.cutoff-note {
+    color: var(--text-cmt);
+}
+
+.cutoff-section {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.cutoff-table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 0.45rem;
+    background-color: var(--bg-box);
+    scrollbar-color: var(--accent-color) var(--bg-box);
+    scrollbar-width: thin;
+}
+
+.cutoff-table-scroll::-webkit-scrollbar {
+    height: 0.75rem;
+}
+
+.cutoff-table-scroll::-webkit-scrollbar-track {
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-box);
+}
+
+.cutoff-table-scroll::-webkit-scrollbar-thumb {
+    border: 2px solid var(--bg-box);
+    border-radius: 999px;
+    background-color: var(--accent-color);
+}
+
+.cutoff-table-scroll:hover::-webkit-scrollbar-thumb,
+.cutoff-table-scroll:focus-within::-webkit-scrollbar-thumb {
+    background-color: var(--text-heading);
+}
+
+.cutoff-table-scroll::-webkit-scrollbar-corner {
+    background-color: var(--bg-box);
+}
+
+.cutoff-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    color: var(--text-main);
+    font-size: clamp(0.88rem, 2vw, 1rem);
+    line-height: 1.55;
+}
+
+.cutoff-table th,
+.cutoff-table td {
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    padding: 0.65rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.cutoff-table th {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    font-weight: 800;
+}
+
+.cutoff-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.cutoff-table th:last-child,
+.cutoff-table td:last-child {
+    border-right: 0;
+}
+
+.faq-section {
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    color: var(--text-cmt);
+}
+
+.faq-section h2 {
+    margin: 0 0 1rem;
+    color: var(--text-heading);
+    font-size: clamp(1.35rem, 3.5vw, 1.8rem);
+    font-weight: 800;
+}
+
+.faq-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 0.45rem;
+    background-color: var(--bg-box);
+}
+
+.faq-item summary {
+    padding: 0.85rem 1rem;
+    color: var(--text-heading);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.faq-item p,
+.faq-placeholder {
+    margin: 0;
+    color: var(--text-cmt);
+    line-height: 1.7;
+}
+
+.faq-item p {
+    border-top: 1px solid var(--border-color);
+    padding: 0.85rem 1rem 1rem;
+}
+
+.faq-placeholder {
+    border: 1px solid var(--border-color);
+    border-radius: 0.45rem;
+    padding: 1rem;
+    background-color: var(--bg-box);
+    color: var(--text-muted);
 }
 
 .empty-state {
@@ -351,7 +601,11 @@ button {
 [data-theme="terminal"] .category-card,
 [data-theme="terminal"] .university-row,
 [data-theme="terminal"] .back-button,
-[data-theme="terminal"] .detail-tab.is-active {
+[data-theme="terminal"] .detail-action-button,
+[data-theme="terminal"] .detail-tab.is-active,
+[data-theme="terminal"] .image-nav,
+[data-theme="terminal"] .faq-item,
+[data-theme="terminal"] .faq-placeholder {
     box-shadow: none;
 }
 
@@ -365,6 +619,23 @@ button {
     .university-image-placeholder {
         aspect-ratio: 4 / 3;
     }
+
+    .image-nav {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .image-nav-prev {
+        left: 0.55rem;
+    }
+
+    .image-nav-next {
+        right: 0.55rem;
+    }
+
+    .image-indicators {
+        bottom: 0.55rem;
+    }
     .app-navbar-inner {
         min-height: 52px;
         padding-inline: 0.85rem;
@@ -376,6 +647,23 @@ button {
 
     .page-title {
         margin-bottom: 2rem;
+    }
+
+    .detail-toolbar {
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .detail-actions {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .detail-action-button {
+        flex: 1 1 9rem;
+        min-width: 0;
+        text-align: center;
     }
 
     .category-grid {
@@ -406,6 +694,20 @@ button {
     .detail-tab {
         flex: 0 0 auto;
         white-space: nowrap;
+    }
+
+    .cutoff-content {
+        gap: 1rem;
+    }
+
+    .cutoff-table {
+        min-width: 580px;
+        font-size: 0.86rem;
+    }
+
+    .cutoff-table th,
+    .cutoff-table td {
+        padding: 0.55rem 0.6rem;
     }
 }
 
