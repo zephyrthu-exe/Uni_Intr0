@@ -1987,9 +1987,7 @@ function initializeAssistantWidget() {
 
         if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
             urls.push(`${window.location.origin}/api/chat`);
-        }
-
-        if (window.location.origin !== 'http://127.0.0.1:3000') {
+        } else {
             urls.push('http://127.0.0.1:3000/api/chat');
         }
 

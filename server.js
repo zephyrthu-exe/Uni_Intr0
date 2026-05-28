@@ -46,6 +46,14 @@ app.use(express.static(path.join(__dirname, "public"), {
     extensions: ["html"]
 }));
 
+app.get("/api/health", (request, response) => {
+    response.json({
+        ok: true,
+        hasGeminiApiKey: Boolean(process.env.GEMINI_API_KEY),
+        model: process.env.GEMINI_MODEL || DEFAULT_MODEL
+    });
+});
+
 function getGeminiClient() {
     if (!geminiClient) {
         geminiClient = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
