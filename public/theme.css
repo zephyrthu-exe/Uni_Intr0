@@ -1,0 +1,42 @@
+:root {
+    --bg-body: #F8F5F2;
+    --bg-box: #F8F5F2;
+    --border-color: #385144;
+    --text-main: #385144;
+    --text-muted: #385144;
+    --text-cmt: #385144;
+    --text-code: #385144;
+    --text-heading: #385144;
+    --icon-color: #385144;
+    --accent-color: #385144;
+    --nav-bg: #385144;
+    --nav-text: #F8F5F2;
+    --nav-border: transparent;
+    --nav-glass-bg: rgba(248, 245, 242, 0.72);
+    --nav-glass-border: rgba(56, 81, 68, 0.24);
+    --nav-glass-shadow: 0 1rem 2.75rem rgba(56, 81, 68, 0.16);
+    --nav-glass-text: #385144;
+    --nav-hover-bg: rgba(56, 81, 68, 0.1);
+}
+
+[data-theme="dark"],
+[data-theme="terminal"] {
+    --bg-body: #222222;
+    --bg-box: #222222;
+    --border-color: #C2D8C4;
+    --text-main: #C2D8C4;
+    --text-muted: #C2D8C4;
+    --text-cmt: #C2D8C4;
+    --text-code: #C2D8C4;
+    --text-heading: #C2D8C4;
+    --icon-color: #C2D8C4;
+    --accent-color: #C2D8C4;
+    --nav-bg: #C2D8C4;
+    --nav-text: #222222;
+    --nav-border: #C2D8C4;
+    --nav-glass-bg: rgba(34, 34, 34, 0.68);
+    --nav-glass-border: rgba(194, 216, 196, 0.26);
+    --nav-glass-shadow: 0 1rem 2.75rem rgba(0, 0, 0, 0.32);
+    --nav-glass-text: #C2D8C4;
+    --nav-hover-bg: rgba(194, 216, 196, 0.12);
+}

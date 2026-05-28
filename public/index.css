@@ -1,0 +1,295 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    font-family: "Courier New", monospace;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.landing-shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    opacity: 0;
+    animation: fadeIn 0.35s ease-out forwards;
+}
+
+.landing-shell.animate {
+    animation: fadeOut 0.35s ease forwards;
+}
+
+.app-navbar {
+    padding: clamp(0.7rem, 2vw, 1rem) clamp(0.75rem, 3vw, 1.5rem) 0;
+    background: transparent;
+    border-bottom: 0;
+    z-index: 1020;
+}
+
+.app-navbar-inner {
+    width: min(100%, 1200px);
+    min-height: 64px;
+    margin: 0 auto;
+    padding: 0.55rem 0.7rem 0.55rem clamp(1rem, 3vw, 1.35rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid var(--nav-glass-border);
+    border-radius: 999px;
+    background-color: var(--nav-glass-bg);
+    color: var(--nav-glass-text);
+    box-shadow: var(--nav-glass-shadow);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.brand-link {
+    min-width: 0;
+    color: var(--nav-glass-text) !important;
+    text-decoration: none !important;
+    font-size: clamp(1.35rem, 4vw, 2rem);
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.navbar-actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.45rem;
+    flex-shrink: 0;
+}
+
+.navbar-action-button {
+    min-height: 2.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 0.5rem 0.75rem;
+    background-color: transparent;
+    color: var(--nav-glass-text) !important;
+    font-size: 0.92rem;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease, outline-color 0.18s ease;
+}
+
+.navbar-action-button:hover,
+.navbar-action-button:focus-visible {
+    transform: translateY(-1px);
+    background-color: var(--nav-glass-text);
+    color: var(--bg-body) !important;
+    outline: 1px solid var(--nav-glass-text);
+    outline-offset: 2px;
+}
+
+.theme-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-grid;
+    place-items: center;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--nav-glass-text);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-button:hover,
+.theme-button:focus-visible {
+    transform: scale(1.08);
+    background-color: var(--nav-hover-bg);
+    outline: 1px solid var(--nav-glass-text);
+    outline-offset: 2px;
+}
+
+.landing-main {
+    width: min(100%, 1120px);
+    margin: 0 auto;
+    padding: clamp(3rem, 9vh, 7rem) clamp(1rem, 4vw, 2.5rem);
+    display: grid;
+    align-items: center;
+}
+
+.landing-panel {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.status-label {
+    margin: 0 0 0.75rem;
+    color: var(--text-muted);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.landing-title {
+    margin: 0;
+    color: var(--text-heading);
+    font-size: clamp(3rem, 14vw, 6.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    overflow-wrap: anywhere;
+}
+
+.landing-copy {
+    max-width: 640px;
+    margin: clamp(1.25rem, 4vw, 2rem) auto 0;
+    color: var(--text-cmt);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    line-height: 1.7;
+}
+
+.landing-actions {
+    margin-top: clamp(2rem, 6vw, 3.5rem);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.landing-action-button {
+    min-width: min(100%, 13.5rem);
+    min-height: 3.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    border: 1px solid currentColor;
+    border-radius: 0.45rem;
+    padding: 0.8rem 1.05rem;
+    background-color: transparent;
+    font-size: clamp(1rem, 2.8vw, 1.2rem);
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, outline-color 0.2s ease;
+}
+
+.start-button {
+    color: var(--accent-color);
+}
+
+.start-button:hover,
+.start-button:focus-visible {
+    transform: translateY(-2px);
+    background-color: var(--accent-color);
+    color: var(--bg-body);
+    outline: 1px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+.landing-footer {
+    width: min(100%, 1120px);
+    margin: 0 auto;
+    padding: 1.25rem clamp(1rem, 4vw, 2.5rem) 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+@media (max-width: 767.98px) {
+    .app-navbar {
+        padding: 0.65rem 0.65rem 0;
+    }
+
+    .app-navbar-inner {
+        min-height: 52px;
+        gap: 0.5rem;
+        padding: 0.45rem 0.5rem 0.45rem 0.85rem;
+    }
+
+    .brand-link {
+        font-size: clamp(1.15rem, 6vw, 1.35rem);
+    }
+
+    .navbar-actions {
+        gap: 0.35rem;
+    }
+
+    .navbar-action-button {
+        width: 2.35rem;
+        min-width: 2.35rem;
+        min-height: 2.35rem;
+        padding: 0;
+    }
+
+    .navbar-action-button span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+
+    .landing-main {
+        padding-top: 3.5rem;
+        padding-bottom: 3rem;
+    }
+
+    .landing-panel {
+        text-align: left;
+    }
+
+    .landing-actions {
+        justify-content: stretch;
+    }
+
+    .landing-action-button {
+        width: 100%;
+    }
+
+    .landing-footer {
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}

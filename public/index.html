@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        (function()
+        {
+            const storedTheme = localStorage.getItem('theme') || 'light';
+            const theme = storedTheme === 'terminal' ? 'dark' : storedTheme;
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni_Intr0</title>
+    <link rel="icon" type="image/x-icon" href="/Uni.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="theme.css?v=9">
+    <link rel="stylesheet" href="index.css?v=3">
+</head>
+<body>
+    <div id="page-wrapper" class="landing-shell">
+        <nav class="app-navbar sticky-top" aria-label="Primary navigation">
+            <div class="app-navbar-inner">
+                <a id="Home" class="brand-link" href="index.html">Uni_Intr0</a>
+                <div class="navbar-actions" role="group" aria-label="Page actions">
+                    <a class="navbar-action-button navbar-contribute-button" href="https://telegram.me/Uni_Inro_Official_Bot" target="_blank" rel="noopener noreferrer" title="Contribute university information" aria-label="Contribute university information">
+                        <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                        <span>Contribute</span>
+                    </a>
+                    <a class="navbar-action-button navbar-community-button" href="https://telegram.me/Uni_Intro_Student_Hub" target="_blank" rel="noopener noreferrer" title="Join and make friends with others." aria-label="Join and make friends with others.">
+                        <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+                        <span>Join Community</span>
+                    </a>
+                    <button id="terminal" class="theme-button" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Dark Theme" aria-label="Switch to dark theme">
+                        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <main class="landing-main">
+            <section class="landing-panel" aria-labelledby="Header">
+                <!-- <p class="status-label">Beta</p> -->
+                <h1 id="Header" class="landing-title">Uni_Intr0</h1>
+                <p class="landing-copy">Youths 2 Youths.</p>
+                <p class="landing-copy">Chase your dreams with our pre-trained <strong>AI</strong>.</p>
+                <div class="landing-actions">
+                    <button id="Start" class="start-button landing-action-button" type="button">
+                        <span>Let's Start!</span>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="landing-footer">
+            <span>Built by Zephyr</span>
+            <span>&copy; <span>Copyright</span></span>
+        </footer>
+    </div>
+
+    <script>
+        const btn = document.getElementById('Start');
+        const container = document.getElementById('page-wrapper');
+
+        window.addEventListener('pageshow', () => {
+            container.classList.remove('animate');
+        });
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            container.classList.remove('animate');
+            void container.offsetWidth;
+            container.classList.add('animate');
+        });
+
+        container.addEventListener('animationend', (e) => {
+            if (e.animationName === 'fadeOut')
+            {
+                window.location.href = 'Main.html';
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="theme.js?v=7"></script>
+</body>
+</html>
