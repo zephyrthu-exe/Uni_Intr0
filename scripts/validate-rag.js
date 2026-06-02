@@ -10,13 +10,15 @@ const {
 
 const data = loadRagData();
 
-assert.strictEqual(data.rows.length, 1048, "Expected 1048 JSONL rows");
-assert.strictEqual(data.universityTags.length, 18, "Expected 18 university tags");
-assert.strictEqual(getAvailableUniversities(data).length, 18, "Expected 18 selectable universities");
+assert.strictEqual(data.rows.length, 1066, "Expected 1066 JSONL rows");
+assert.strictEqual(data.universityTags.length, 20, "Expected 20 university tags");
+assert.strictEqual(getAvailableUniversities(data).length, 20, "Expected 20 selectable universities");
 
 assert.strictEqual(inferUniversityTag("Tell me about YUFL hostel", data), "YUFL");
 assert.strictEqual(inferUniversityTag("What can I study at University of Information Technology?", data), "UIT");
 assert.strictEqual(inferUniversityTag("How is pharmacy admission?", data), "UOP");
+assert.strictEqual(inferUniversityTag("Tell me about Yezin Agricultural University hostel", data), "YAU");
+assert.strictEqual(inferUniversityTag("What is the cutoff for University of Forestry Yezin?", data), "UFES");
 
 const topicTags = inferTypeTags("Tell me about hostel, canteen food, and fees.", data);
 assert(topicTags.includes("hostel"), "Expected hostel tag inference");
@@ -65,7 +67,7 @@ const choiceContext = resolveChatContext({
     pageUniversityId: "tu-pyay"
 }, data);
 assert.strictEqual(choiceContext.needsUniversitySelection, true, "Expected university-choice fallback");
-assert.strictEqual(choiceContext.universities.length, 18, "Expected 18 fallback choices");
+assert.strictEqual(choiceContext.universities.length, 20, "Expected 20 fallback choices");
 
 const directRetrieval = retrieveContext("Where is Yangon University located?", "YU", { data });
 assert.strictEqual(directRetrieval.universityTag, "YU");
