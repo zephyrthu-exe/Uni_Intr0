@@ -742,6 +742,26 @@ const cutoffData = {
             }
         ]
     },
+    um1Medicine: {
+        intro: "၂၀၂၄-၂၀၂၅ ခုနှစ် တက္ကသိုလ်ဝင်စာမေးပွဲအောင်မြင်သူများအတွက် ရန်ကုန်ဆေးတက္ကသိုလ် (၁) ဝင်ခွင့် သတ်မှတ်ချက်များဖြစ်သည်။ ECB ဆိုသည်မှာ English + Chemistry + Biology ၃ ဘာသာပေါင်းရမှတ် ဖြစ်သည်။",
+        sections: [
+            {
+                title: "၆ ဘာသာပေါင်း အခြေခံသတ်မှတ်ချက်",
+                columns: ["တွက်ချက်ပုံ", "သတ်မှတ်ချက်"],
+                rows: [
+                    ["၆ ဘာသာပေါင်းရမှတ်", "၄၅၀ မှတ်အထက်"]
+                ]
+            },
+            {
+                title: "UM1 အတွက် ECB အလိုက် သတ်မှတ်ချက်",
+                note: "ရန်ကုန်ဆေးတက္ကသိုလ် (၁) အတွက်သာ သီးခြားဖော်ပြထားသော ECB ရမှတ်များဖြစ်သည်။",
+                columns: ["တွက်ချက်ပုံ", "ကျား", "မ"],
+                rows: [
+                    ["ECB", "၂၅၂ မှတ်အထက်", "၂၅၇ မှတ်အထက်"]
+                ]
+            }
+        ]
+    },
     medicalTechnology: {
         intro: "၂၀၂၄-၂၀၂၅ ခုနှစ် တက္ကသိုလ်ဝင်စာမေးပွဲအောင်မြင်သူများအတွက် ဆေးဘက်ဆိုင်ရာ နည်းပညာတက္ကသိုလ်ဝင်ခွင့် သတ်မှတ်ချက်ဖြစ်သည်။",
         sections: [
@@ -1138,7 +1158,7 @@ const universityDetails = {
         ]
     },
     um1: {
-        cutoff: cutoffData.medicalUniversity,
+        cutoff: cutoffData.um1Medicine,
         faqs: [
             ...medicalGeneralFaqs,
             { question: "What admission basis was discussed for UM1?", answer: "The source mentioned total-mark eligibility around 450 and English-Chemistry-Biology based final separation for medicine and dental admissions. The exact rule should be checked against the current official guide." }
