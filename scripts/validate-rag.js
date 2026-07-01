@@ -10,7 +10,7 @@ const {
 
 const data = loadRagData();
 
-assert.strictEqual(data.rows.length, 1067, "Expected 1067 JSONL rows");
+assert.strictEqual(data.rows.length, 1074, "Expected 1074 JSONL rows");
 assert.strictEqual(data.universityTags.length, 20, "Expected 20 university tags");
 assert.strictEqual(getAvailableUniversities(data).length, 20, "Expected 20 selectable universities");
 
